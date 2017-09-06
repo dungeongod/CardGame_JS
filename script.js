@@ -29,7 +29,7 @@ var suits = ["spades", "hearts", "clubs", "diams"];
         var pot = [card1,card2];
         //update html
         p1.innerHTML = showCard(card1,0);
-        p2.innerHTML = showCard(card2,0);
+        p2.innerHTML = showCard(card2,23.6);
         //check winner
         //update scores
       }
@@ -37,12 +37,15 @@ var suits = ["spades", "hearts", "clubs", "diams"];
 
     function showCard(c,p) {
       var move = p*40;
-      var bgColor = (c.icon == "H" || c.icon == "D")? "red" : "black";
-      var bCard = '<div style="color:'+bgColor+'">'+ c.num + ' &'+ c.suit + ';</div>';
+      //var bgColor = (c.icon == "H" || c.icon == "D")? "red" : "black";
+      var bCard = '<div class="icard '+c.suit+' " style="left:'+move+'px">';
+      bCard += '<div class="cardtop suit">' + c.num + '<br></div>';
+      bCard += '<div class="cardmid suit"></div>';
+      bCard += '<div class="cardbottom suit">' + c.num + '<br></div></div>';
       console.log(c,move);
       return bCard;
 
-    }  
+    }
 
     function buildCards() {
       cards = [];
